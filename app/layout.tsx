@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Barlow_Condensed, Barlow } from "next/font/google";
 import "./globals.css";
+
+const bardlowCondensed = Barlow_Condensed({
+  variable: "--font-bardlow-condensed",
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+});
+
+const barlow = Barlow({
+  variable: "--font-barlow",
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,10 +35,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${barlow.variable} ${bardlowCondensed.variable}`}
+    >
+      <body className="antialiased bg-background text-foreground">
+        <div className="h-8 bg-brand-dark"></div>
+        <div className="h-20 bg-white px-8 py-1 flex items-center">
+          <a href="/" className="mx-auto lg:mx-0 h-full">
+            <img src="/anxiousloomers_main_logo.avif" className="h-full" />
+          </a>
+          <div className="hidden lg:flex mx-8 gap-8 text-[rgb(0,87,18)] justify-center">
+            <a href="/">About Us</a>
+            <a href="/">Partners</a>
+            <a href="/">Programs</a>
+            <a href="/">Resources</a>
+            <a href="/">Shop</a>
+            <a href="/">Contact</a>
+            <a href="/">Legal Notice</a>
+          </div>
+        </div>
         {children}
       </body>
     </html>

@@ -3,24 +3,99 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand blues – cooler, truer blue */
+  --brand-50: #eef4ff;
+  --brand-100: #dbe7ff;
+  --brand-200: #b6ceff;
+  --brand-300: #90b4ff;
+  --brand-400: #5f8fff;
+
+  --brand-500: #2563ff; /* new base – true blue */
+
+  --brand-600: #1e4ed8;
+  --brand-700: #1e40af;
+  --brand-800: #1e3a8a;
+  --brand-900: #172554;
+
+  /* Warm accent (contrast & CTAs) */
+  --accent-warm-500: #ff8a3d; /* orange coral */
+  --accent-warm-300: #ffc2a0;
+
+  /* Cool accent (secondary actions) */
+  --accent-cool-500: #2dd4bf; /* teal mint */
+  --accent-cool-300: #99f6ad;
+
+  /* Highlight */
+  --accent-highlight-500: #facc15; /* soft gold */
+
+  /* Neutrals */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantics */
+  --success-500: #16a34a;
+  --success-100: #dcfce7;
+
+  --warning-500: #f59e0b;
+  --warning-100: #fef3c7;
+
+  --error-500: #dc2626;
+  --error-100: #fee2e2;
+
+  --info-500: #0284c7;
+  --info-100: #e0f2fe;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand: var(--brand-500);
+  --color-brand-dark: var(--brand-800);
+  --color-brand-light: var(--brand-100);
+  --color-accent-warm: var(--accent-warm-500);
+  --color-accent-warm-light: var(--accent-warm-300);
+  --color-accent-cool: var(--accent-cool-500);
+  --color-accent-cool-light: var(--accent-cool-300);
+  --font-sans: var(--font-barlow);
+  --font-test: var(--font-bardlow-condensed);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-barlow), system-ui, sans-serif;
+}
+
+.about-watercolor {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    90deg,
+    #f6d04d 0%,
+    #f39a3a 18%,
+    #e84d5c 40%,
+    #b54aa2 62%,
+    #3a61d8 78%,
+    #2aa6e6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* outline / edge contrast */
+  /* -webkit-text-stroke: 2px rgba(0, 0, 0, 0.35); */
+
+  /* soft lift */
+  /* text-shadow: 0 2px 0 rgba(255, 255, 255, 0.65), 0 6px 14px rgba(0, 0, 0, 0.2); */
 }

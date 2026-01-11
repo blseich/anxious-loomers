@@ -1,0 +1,35 @@
+.right-arrow {
+  &::after {
+    background-color: #ffffff;
+    -webkit-mask-image: url("/right_arrow.svg");
+    mask-image: url("/right_arrow.svg");
+    content: "";
+    width: 36px;
+    height: 17px;
+    display: block;
+    -webkit-mask-size: auto 100%;
+    mask-size: auto 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition-timing-function: ease-out;
+    transition-property: transform, font-size;
+    transition-duration: 200ms;
+  }
+  /* transition-timing-function: ease-out;
+  transition-property: transform, font-size;
+  transition-duration: 200ms; */
+
+  &:hover::after {
+    animation: right-arrow-bounce 500ms ease-in-out infinite;
+  }
+}
+
+@keyframes right-arrow-bounce {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
