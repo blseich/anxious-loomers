@@ -56,6 +56,11 @@ export default function RootLayout({
           </div>
         </div>
         {children}
+        <div className="bg-brand-dark p-4 text-white text-center flex gap-4">
+          <div>© 2026, ANXIOUSLOOMERS</div>
+          <div>&middot;</div>
+          <a className="underline">Privacy Policy</a>
+        </div>
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ export default function MentalHealthMatters() {
 
       <div className="mt-12 mx-4 grid grid-cols-[125px_1fr] gap-4 gap-y-8 place-items-center text-lg">
         <img src="/1-in-5.png" className="w-31.25" />
-        1 in 5 people will battle with mentall illness each year
+        1 in 5 people will battle with mental illness each year
         <div className="h-0.5 bg-brand-light col-span-2 w-full" />
         <img src="/14-candles.png" className="h-31.25" />
         Half of all lifetime mental illness will present by the age of 14
