@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Barlow_Condensed, Barlow } from "next/font/google";
+import { Barlow_Condensed, Barlow } from "next/font/google";
 import "./globals.css";
 
 const bardlowCondensed = Barlow_Condensed({
@@ -11,16 +11,6 @@ const bardlowCondensed = Barlow_Condensed({
 const barlow = Barlow({
   variable: "--font-barlow",
   weight: ["400", "700"],
-  subsets: ["latin"],
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -39,7 +29,7 @@ export default function RootLayout({
       lang="en"
       className={`${barlow.variable} ${bardlowCondensed.variable}`}
     >
-      <body className="antialiased bg-background text-foreground">
+      <body className="antialiased bg-background text-foreground lg:text-lg">
         <div className="h-8 bg-brand-dark"></div>
         <div className="h-20 bg-white px-8 py-1 flex items-center">
           <a href="/" className="mx-auto lg:mx-0 h-full">

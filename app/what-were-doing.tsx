@@ -6,7 +6,7 @@ export default function WhatWereDoing() {
       <h2 className="font-test font-bold text-4xl pr-4 bg-brand-dark text-white ml-12 py-4 text-right">
         What We're <div className="text-6xl font-black">DOING</div>
       </h2>
-      <div className="mx-8 my-8 shadow-xl border border-accent-warm-light p-4">
+      <div className="mx-8 my-8 shadow-xl border border-accent-warm-light p-4 bg-white">
         <div className="flex justify-between items-center">
           <h3 className="text-2xl font-semibold text-brand-dark">
             Weaving Wellness

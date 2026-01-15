@@ -1,6 +1,8 @@
+import Section from "@/components/section";
+
 export default function Hero2() {
   return (
-    <>
+    <Section>
       <div className="relative image-bottom-fade">
         <img src="/HUGGING_FULL_SIZE.webp" className="" />
         <div className="absolute flex flex-col text-4xl font-test font-black text-white top-4 left-4 z-10">
@@ -15,6 +17,6 @@ export default function Hero2() {
         drive, not where you're going.
         <img src="/quotes.svg" className="w-4 self-end" />
       </div>
-    </>
+    </Section>
   );
 }
