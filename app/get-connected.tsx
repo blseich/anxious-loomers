@@ -9,8 +9,8 @@ import {
 export default function GetConnected() {
   return (
     <Section>
-      <div className="lg:max-w-300 lg:mx-auto">
-        <div className="mx-6 my-8 lg:mx-auto lg:max-w-5xl">
+      <div className="section-container">
+        <div className="my-8 mx-auto max-w-5xl">
           <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
             <div className="bg-brand-dark text-white px-6 py-10 lg:px-10 lg:py-12">
               <h2 className="font-test font-bold text-4xl lg:text-6xl leading-tight">

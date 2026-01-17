@@ -3,7 +3,7 @@ import "./hero_2.css";
 
 export default function Hero2() {
   return (
-    <Section>
+    <>
       <div className="lg:flex">
         <div className="relative hero-2-fade">
           <img
@@ -37,6 +37,6 @@ export default function Hero2() {
           </div>
         </div>
       </div>
-    </Section>
+    </>
   );
 }

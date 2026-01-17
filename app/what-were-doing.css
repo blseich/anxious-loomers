@@ -1,5 +1,6 @@
 .what-were-doing-carousel {
   padding-bottom: 32px;
+  overflow: hidden;
 }
 
 .what-were-doing-carousel .swiper-wrapper {
@@ -19,41 +20,12 @@
   aspect-ratio: 4 / 3;
 }
 
-.what-were-doing-carousel .swiper-button-prev,
-.what-were-doing-carousel .swiper-button-next {
-  display: none;
-}
-
 @media (min-width: 1024px) {
   .what-were-doing-carousel {
-    padding: 0 48px 40px;
+    padding-bottom: 40px;
   }
 
   .what-were-doing-carousel .swiper-slide {
     padding: 0;
-  }
-
-  .what-were-doing-carousel .swiper-button-prev,
-  .what-were-doing-carousel .swiper-button-next {
-    display: flex;
-    color: #ff8a3d;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-  }
-
-  .what-were-doing-carousel .swiper-button-prev::after,
-  .what-were-doing-carousel .swiper-button-next::after {
-    font-size: 26px;
-    text-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  }
-
-  .what-were-doing-carousel .swiper-button-prev {
-    left: 8px;
-  }
-
-  .what-were-doing-carousel .swiper-button-next {
-    right: 8px;
   }
 }

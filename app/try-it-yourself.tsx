@@ -2,9 +2,9 @@ import Section from "@/components/section";
 
 export default function TryItYourself() {
   return (
-    <Section>
-      <div className="bg-brand-light py-10 lg:py-16">
-        <div className="lg:max-w-300 lg:mx-auto px-4">
+    <>
+      <div className="bg-brand-light pt-10 pb-12 lg:py-16 lg:pb-24">
+        <div className="section-container">
           <h2 className="text-4xl lg:text-6xl font-test font-bold text-brand-dark">
             LEARN TO LOOM
           </h2>
@@ -24,6 +24,6 @@ export default function TryItYourself() {
           </div>
         </div>
       </div>
-    </Section>
+    </>
   );
 }

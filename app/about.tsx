@@ -30,7 +30,7 @@ export default function About() {
             className="w-full lg:mx-auto block lg:hidden"
           />
         </div>
-        <div className="mx-4 my-8 lg:mx-auto lg:mt-24 lg:max-w-6xl lg:grid lg:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1.4fr)] lg:items-start lg:gap-12">
+        <div className="section-container my-8 lg:mt-24 lg:grid lg:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1.4fr)] lg:items-start lg:gap-12">
           <div className="text-4xl lg:text-7xl font-bold text-brand font-test leading-tight tracking-tight">
             <div className="flex items-end gap-4">
               <span className="block">ANXIOUSLOOMERS</span>
