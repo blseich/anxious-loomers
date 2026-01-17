@@ -1,48 +1,111 @@
+"use client";
+
 import Section from "@/components/section";
+import { useInViewOnce } from "@/hooks/use-in-view-once";
+import "./mental-health-matters.css";
 
 export default function MentalHealthMatters() {
+  const { isInView: statOneVisible, ref: statOneRef } =
+    useInViewOnce<HTMLDivElement>({
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    });
+  const { isInView: statTwoVisible, ref: statTwoRef } =
+    useInViewOnce<HTMLDivElement>({
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    });
+  const { isInView: statThreeVisible, ref: statThreeRef } =
+    useInViewOnce<HTMLDivElement>({
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    });
+
   return (
     <Section>
-      <div className="lg:flex lg:flex-col">
-        <h2 className="font-test font-bold text-4xl pl-4 bg-brand-dark text-white mr-12 py-4">
-          Why Mental Health <div className="text-6xl font-black">MATTERS</div>
-        </h2>
+      <div className="lg:flex lg:flex-col lg:max-w-300 lg:mx-auto">
+        <div className="bg-brand-dark text-white py-6 lg:py-8 px-4">
+          <h2 className="font-test font-bold text-4xl lg:text-5xl">
+            Why Mental Health
+            <div className="text-5xl lg:text-6xl font-black">MATTERS</div>
+          </h2>
+          <p className="mt-2 text-white/80 max-w-prose">
+            The numbers tell a story. These statistics are why support and
+            awareness are critical to improving the wellness of our communities.
+          </p>
+        </div>
 
-        <div className="mt-12 mx-4 grid grid-cols-[125px_1fr] lg:grid-cols-[1fr_2px_1fr_2px_1fr] lg:grid-rows-[250px_1fr] gap-4 lg:gap-12 place-items-center text-lg lg:max-w-285 lg:mx-auto lg:text-center">
-          <img src="/1-in-5.png" className="w-31.25 lg:w-62.5" />
-          <div className="lg:row-start-2">
-            1 in 5 people will battle with mental illness each year
+        <div className="mt-10 mx-4 grid gap-6 lg:gap-8 lg:grid-cols-3 lg:max-w-285 lg:mx-auto">
+          <div
+            ref={statOneRef}
+            className={`stat-card bg-brand-dark text-white p-6 lg:p-8 rounded-2xl text-base lg:text-lg text-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.25)] overflow-hidden ${
+              statOneVisible ? "is-visible" : ""
+            }`}
+          >
+            <div className="h-1 w-16 bg-accent-warm mx-auto mb-6" />
+            <img
+              src="/1-in-5.png"
+              alt="1 in 5 statistic"
+              className="w-31.25 lg:w-62.5 mx-auto drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
+            />
+            <p className="mt-6 max-w-prose mx-auto text-white/90">
+              1 in 5 people will battle with mental illness each year.
+            </p>
           </div>
-          <div className="h-0.5 bg-brand-light col-span-2 w-full lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-2 lg:h-full" />
-          <img
-            src="/14-candles.png"
-            className="h-31.25 lg:h-62.5 lg:col-start-3"
-          />
-          <div className="lg:row-start-2 lg:col-start-3">
-            Half of all lifetime mental illness will present by the age of 14
+          <div
+            ref={statTwoRef}
+            className={`stat-card bg-brand-dark text-white p-6 lg:p-8 rounded-2xl text-base lg:text-lg text-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.25)] overflow-hidden ${
+              statTwoVisible ? "is-visible" : ""
+            }`}
+          >
+            <div className="h-1 w-16 bg-accent-warm mx-auto mb-6" />
+            <img
+              src="/14-candles.png"
+              alt="14 candles statistic"
+              className="h-31.25 lg:h-62.5 mx-auto drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
+            />
+            <p className="mt-6 max-w-prose mx-auto text-white/90">
+              Half of all lifetime mental illness will present by the age of 14.
+            </p>
           </div>
-          <div className="h-0.5 bg-brand-light col-span-2 w-full lg:row-span-2 lg:col-start-4 lg:col-span-1 lg:row-start-1 lg:h-full" />
-          <img src="/60-percent.png" className="w-31.25 lg:w-62.5" />
-          60% of those with mental illness will not receive proper treatment
-          <div className="h-0.5 bg-brand-light col-span-2 w-full lg:row-span-2 lg:hidden" />
-          <div className="col-span-2 text-sm w-full -mt-4 text-gray-400">
+          <div
+            ref={statThreeRef}
+            className={`stat-card bg-brand-dark text-white p-6 lg:p-8 rounded-2xl text-base lg:text-lg text-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.25)] overflow-hidden ${
+              statThreeVisible ? "is-visible" : ""
+            }`}
+          >
+            <div className="h-1 w-16 bg-accent-warm mx-auto mb-6" />
+            <img
+              src="/60-percent.png"
+              alt="60 percent statistic"
+              className="w-31.25 lg:w-62.5 mx-auto drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
+            />
+            <p className="mt-6 max-w-prose mx-auto text-white/90">
+              60% of those with mental illness will not receive proper
+              treatment.
+            </p>
+          </div>
+          <div className="text-sm w-full text-gray-400 lg:col-span-3">
             *Source: National Alliance on Mental Illness (NAMI)
           </div>
         </div>
-
-        <div className="border-l-8 border-l-brand-dark bg-brand-light p-4 mt-8 mx-4">
-          <div className="text-xl font-bold text-brand-dark mb-2">
-            Mental health is just as important as physical health
+        <div className="lg:max-w-1/2 lg:mx-auto" id="resources">
+          <div className="border-l-8 border-l-brand-dark bg-brand-light p-4 mt-8 mx-4">
+            <div className="text-xl font-bold text-brand-dark mb-2">
+              Mental health is just as important as physical health
+            </div>
+            <div>
+              Yet stigma, lack of awareness, and limited access to resources
+              prevent millions from getting the support they need.
+            </div>
           </div>
-          <div>
-            Yet stigma, lack of awareness, and limited access to resources
-            prevent millions from getting the support they need.
-          </div>
+          <a
+            href="#resources"
+            className="flex items-center gap-4 w-fit bg-accent-warm text-white px-4 py-2 my-4 mx-4 font-bold right-arrow cursor-pointer"
+          >
+            Find More Resources
+          </a>
         </div>
-
-        <a className="flex items-center gap-4 w-fit bg-accent-warm text-white px-4 py-2 my-4 mx-4 font-bold right-arrow cursor-pointer">
-          Find More Resources
-        </a>
       </div>
     </Section>
   );

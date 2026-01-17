@@ -3,21 +3,26 @@ import Section from "@/components/section";
 export default function TryItYourself() {
   return (
     <Section>
-      <h2 className="text-4xl font-test font-bold p-4 pb-2 text-brand-dark bg-brand-light">
-        LEARN TO LOOM
-      </h2>
-      <div className="px-4 pb-8 w-full bg-brand-light">
-        <div className="h-0.5 bg-accent-warm-light mb-4"></div>
-        <iframe
-          className="w-11/12 aspect-video mx-auto"
-          src="https://www.youtube.com/embed/0rHxMFNifR4?si=FSPb4PglUtO_56y8"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
-        <div className="h-0.5 bg-accent-warm-light mt-4"></div>
+      <div className="bg-brand-light py-10 lg:py-16">
+        <div className="lg:max-w-300 lg:mx-auto px-4">
+          <h2 className="text-4xl lg:text-6xl font-test font-bold text-brand-dark">
+            LEARN TO LOOM
+          </h2>
+          <p className="text-brand-dark mt-2 lg:text-lg">
+            A quick starter lesson to help you make your first loom knit.
+          </p>
+          <div className="mt-6 rounded-lg border border-accent-warm-light bg-white/70 p-4 lg:p-6 shadow-sm">
+            <iframe
+              className="w-full aspect-video"
+              src="https://www.youtube.com/embed/0rHxMFNifR4?si=FSPb4PglUtO_56y8"
+              title="Learn to loom knitting basics"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
       </div>
     </Section>
   );

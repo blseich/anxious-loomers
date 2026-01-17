@@ -53,6 +53,9 @@
 
   --info-500: #0284c7;
   --info-100: #e0f2fe;
+
+  /* Breakpoints */
+  --tw-screen-lg: 1024px;
 }
 
 @theme {

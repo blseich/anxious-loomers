@@ -1,21 +1,41 @@
 import Section from "@/components/section";
+import "./hero_2.css";
 
 export default function Hero2() {
   return (
     <Section>
-      <div className="relative image-bottom-fade">
-        <img src="/HUGGING_FULL_SIZE.webp" className="" />
-        <div className="absolute flex flex-col text-4xl font-test font-black text-white top-4 left-4 z-10">
-          <p>Mindfulness</p>
-          <p className="pl-4">Community</p>
-          <p className="pl-8">Accessibility</p>
+      <div className="lg:flex">
+        <div className="relative hero-2-fade">
+          <img
+            src="/HUGGING_FULL_SIZE.webp"
+            alt="Two people hugging in a moment of support"
+            className="w-full"
+          />
+          <div className="hero-2-overlay" aria-hidden="true" />
+          <div className="hero-2-title absolute flex flex-col text-5xl lg:text-7xl font-test font-black text-white top-6 left-6 z-10 leading-tight">
+            <p>Mindfulness</p>
+            <p>Community</p>
+            <p>Accessibility</p>
+          </div>
         </div>
-      </div>
-      <div className="bg-gray-950 py-4 thing-here -mt-2 text-white px-4 text-lg font-bold wrap-[balance] italic flex gap-2 text-center">
-        <img src="/quotes.svg" className="w-4 rotate-180 self-start" />
-        Mental health is not a destination, but a process. It's about how you
-        drive, not where you're going.
-        <img src="/quotes.svg" className="w-4 self-end" />
+        <div className="bg-gray-950 py-8 lg:py-12 -mt-2 lg:mt-0 text-white px-6 lg:px-12 text-lg lg:text-2xl font-bold wrap-[balance] italic flex flex-col items-center text-center lg:justify-center leading-relaxed border-t border-white/10 lg:border-t-0">
+          <div className="w-full max-w-prose mx-auto">
+            <img
+              src="/quotes.svg"
+              alt="Opening quotation mark"
+              className="w-6 rotate-180 lg:w-8"
+            />
+            <div className="mt-4">
+              Mental health is not a destination, but a process. It's about how
+              you drive, not where you're going.
+            </div>
+            <img
+              src="/quotes.svg"
+              alt="Closing quotation mark"
+              className="w-6 lg:w-8 ml-auto mt-4"
+            />
+          </div>
+        </div>
       </div>
     </Section>
   );
