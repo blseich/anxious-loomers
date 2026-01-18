@@ -35,7 +35,7 @@ export default function MentalHealthMatters() {
           </p>
         </div>
       </div>
-      <div className="section-container lg:flex lg:flex-col">
+      <div className="section-container pg-6 lg:pb-8 lg:flex lg:flex-col">
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-3 lg:max-w-285 lg:mx-auto">
           <div
             ref={statOneRef}
