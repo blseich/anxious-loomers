@@ -41,9 +41,7 @@ export default function WhatWereDoing() {
                       type="button"
                       onClick={() => swiperRef.current?.slideTo(index)}
                       className={`h-2.5 w-8 rounded-full transition-colors cursor-pointer ${
-                        index === activeIndex
-                          ? "bg-accent-warm"
-                          : "bg-gray-400"
+                        index === activeIndex ? "bg-accent-warm" : "bg-gray-400"
                       }`}
                       aria-label={`Go to slide ${index + 1}`}
                       aria-current={index === activeIndex}
@@ -83,20 +81,20 @@ export default function WhatWereDoing() {
                       setActiveIndex(swiper.activeIndex);
                     }}
                   >
-                  <SwiperSlide className="h-full">
-                    <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-full flex flex-col">
-                      <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                        <div>
-                          <div className="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold tracking-wide text-brand-dark">
-                            Community Program
-                          </div>
-                          <h3 className="text-2xl font-semibold text-brand-dark mt-2">
-                            Weaving Wellness
-                          </h3>
-                          <p className="text-sm text-brand-dark/70">
-                            Hands-on loom knitting with mental wellness
-                            strategies.
-                          </p>
+                    <SwiperSlide className="h-full">
+                      <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-[520px] lg:h-[600px] flex flex-col relative">
+                        <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                          <div>
+                            <div className="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold tracking-wide text-brand-dark">
+                              Community Program
+                            </div>
+                            <h3 className="text-2xl font-semibold text-brand-dark mt-2">
+                              Weaving Wellness
+                            </h3>
+                            <p className="text-sm text-brand-dark/70">
+                              Hands-on loom knitting with mental wellness
+                              strategies.
+                            </p>
                         </div>
                         <a
                           href="#weaving-wellness"
@@ -105,122 +103,127 @@ export default function WhatWereDoing() {
                           Details
                         </a>
                       </div>
-                      <div
-                        className="grid gap-6 p-4 lg:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-start flex-1"
-                        id="weaving-wellness"
-                      >
-                        <img
-                          src="/weaving_wellness.png"
-                          alt="Weaving Wellness loom knitting session"
-                          className="what-were-doing-image w-full rounded-xl border border-brand-light object-cover"
-                        />
-                        <p className="text-brand-dark text-base lg:text-lg">
-                          This year, learn how crafting can be healing.{" "}
-                          <em>ANXIOUSLOOMERS</em> is proud to now offer a gentle
-                          introduction to loom knitting and mental wellness
-                          strategies. Each session combines hands-on winter hat
-                          crafting with discussions about stress management and
-                          healthy coping skills. Experience the meditative
-                          rhythm of looming while building friendships in a
-                          supportive, judgment-free environment.
-                        </p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className="h-full">
-                    <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-full flex flex-col">
-                      <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                        <div>
-                          <div className="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold tracking-wide text-brand-dark">
-                            Community Support
-                          </div>
-                          <h3 className="text-2xl font-semibold text-brand-dark mt-2">
-                            Partnership with Family Promise
-                          </h3>
-                          <p className="text-sm text-brand-dark/70">
-                            Donating winter hats/beanies to those in need
+                        <div
+                          className="grid gap-6 p-4 lg:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-start flex-1 overflow-hidden"
+                          id="weaving-wellness"
+                        >
+                          <img
+                            src="/weaving_wellness.png"
+                            alt="Weaving Wellness loom knitting session"
+                            className="what-were-doing-image w-full rounded-xl border border-brand-light object-cover"
+                          />
+                          <p className="text-brand-dark text-base lg:text-lg">
+                            This year, learn how crafting can be healing.{" "}
+                            <em>ANXIOUSLOOMERS</em> is proud to now offer a
+                            gentle introduction to loom knitting and mental
+                            wellness strategies. Each session combines hands-on
+                            winter hat crafting with discussions about stress
+                            management and healthy coping skills. Experience the
+                            meditative rhythm of looming while building
+                            friendships in a supportive, judgment-free
+                            environment.
                           </p>
                         </div>
-                        <a
-                          href="#warming-hearts"
-                          className="flex items-center gap-4 w-fit bg-accent-warm text-white px-4 py-2 font-bold right-arrow cursor-pointer"
-                        >
-                          Visit Family Promise
-                        </a>
+                        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-white/0" />
                       </div>
-                      <div
-                        className="grid gap-6 p-4 lg:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-start flex-1"
-                        id="warming-hearts"
-                      >
-                        <img
-                          src="/promise-house-delaware.jpeg"
-                          alt="Promise House Delaware community support program"
-                          className="what-were-doing-image w-full rounded-xl border border-brand-light object-cover"
-                        />
-                        <p className="text-brand-dark text-base lg:text-lg">
-                          ANXIOUSLOOMERS is proud to partner with Family Promise
-                          of Delaware, Ohio, a nonprofit organization dedicated
-                          to preventing and ending homelessness for families
-                          with children. They provide emergency shelter, meals,
-                          and comprehensive support services to help families
-                          achieve sustainable independence. Their programs
-                          include homelessness prevention, workforce
-                          development, and financial stability resources.
-                          Additionally, they focus on meeting the immediate
-                          needs of homeless families and training volunteers to
-                          assist at-risk families in achieving their goals.
-                        </p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className="h-full">
-                    <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-full flex flex-col">
-                      <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                        <div>
-                          <div className="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold tracking-wide text-brand-dark">
-                            Community Support
+                    </SwiperSlide>
+                    <SwiperSlide className="h-full">
+                      <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-[520px] lg:h-[600px] flex flex-col relative">
+                        <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                          <div>
+                            <div className="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold tracking-wide text-brand-dark">
+                              Community Support
+                            </div>
+                            <h3 className="text-2xl font-semibold text-brand-dark mt-2">
+                              Partnership with Family Promise
+                            </h3>
+                            <p className="text-sm text-brand-dark/70">
+                              Donating winter hats/beanies to those in need
+                            </p>
                           </div>
-                          <h3 className="text-2xl font-semibold text-brand-dark mt-2">
-                            Backpack Drive
-                          </h3>
-                          <p className="text-sm text-brand-dark/70">
-                            Filling backpacks with essentials for those
-                            experiencing homelessness
+                          <a
+                            href="#warming-hearts"
+                            className="flex items-center gap-4 w-fit bg-accent-warm text-white px-4 py-2 font-bold right-arrow cursor-pointer"
+                          >
+                            Details
+                          </a>
+                        </div>
+                        <div
+                          className="grid gap-6 p-4 lg:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-start flex-1 overflow-hidden"
+                          id="warming-hearts"
+                        >
+                          <img
+                            src="/promise-house-delaware.jpeg"
+                            alt="Promise House Delaware community support program"
+                            className="what-were-doing-image w-full rounded-xl border border-brand-light object-cover"
+                          />
+                          <p className="text-brand-dark text-base lg:text-lg">
+                            ANXIOUSLOOMERS is proud to partner with Family
+                            Promise of Delaware, Ohio, a nonprofit organization
+                            dedicated to preventing and ending homelessness for
+                            families with children. They provide emergency
+                            shelter, meals, and comprehensive support services
+                            to help families achieve sustainable independence.
+                            Their programs include homelessness prevention,
+                            workforce development, and financial stability
+                            resources. Additionally, they focus on meeting the
+                            immediate needs of homeless families and training
+                            volunteers to assist at-risk families in achieving
+                            their goals.
                           </p>
                         </div>
-                        <a
-                          href="#backpack-drive"
-                          className="flex items-center gap-4 w-fit bg-accent-warm text-white px-4 py-2 font-bold right-arrow cursor-pointer"
+                        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-white/0" />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="h-full">
+                      <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-[520px] lg:h-[600px] flex flex-col relative">
+                        <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                          <div>
+                            <div className="inline-flex items-center rounded-full bg-brand-light px-3 py-1 text-xs font-semibold tracking-wide text-brand-dark">
+                              Community Support
+                            </div>
+                            <h3 className="text-2xl font-semibold text-brand-dark mt-2">
+                              Backpack Drive
+                            </h3>
+                            <p className="text-sm text-brand-dark/70">
+                              Filling backpacks with essentials for those
+                              experiencing homelessness
+                            </p>
+                          </div>
+                          <a
+                            href="#backpack-drive"
+                            className="flex items-center gap-4 w-fit bg-accent-warm text-white px-4 py-2 font-bold right-arrow cursor-pointer"
+                          >
+                            Details
+                          </a>
+                        </div>
+                        <div
+                          className="grid gap-6 p-4 lg:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-start flex-1 overflow-hidden"
+                          id="backpack-drive"
                         >
-                          Details
-                        </a>
+                          <img
+                            src="/take-the-opportunity.jpg"
+                            alt="Take the Opportunity backpack drive support event"
+                            className="what-were-doing-image w-full rounded-xl border border-brand-light object-cover"
+                          />
+                          <p className="text-brand-dark text-base lg:text-lg">
+                            Take the Opportunity builds community by providing
+                            compassionate, practical support to people
+                            experiencing homelessness, while empowering
+                            volunteers to make a real and immediate impact!!
+                            Always ready to Take The Opportunity!
+                            <br />
+                            <br />
+                            ANXIOUSLOOMERS is proud to have participated in Take
+                            The Opportunity's second annual backpack drive
+                            2024-2025, over 200 backpacks filled with hygienic
+                            resources and other essentials were donated to those
+                            experiencing homelessness.
+                          </p>
+                        </div>
+                        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-white/0" />
                       </div>
-                      <div
-                        className="grid gap-6 p-4 lg:p-6 lg:grid-cols-[1.1fr_1fr] lg:items-start flex-1"
-                        id="backpack-drive"
-                      >
-                        <img
-                          src="/take-the-opportunity.jpg"
-                          alt="Take the Opportunity backpack drive support event"
-                          className="what-were-doing-image w-full rounded-xl border border-brand-light object-cover"
-                        />
-                        <p className="text-brand-dark text-base lg:text-lg">
-                          Take the Opportunity builds community by providing
-                          compassionate, practical support to people
-                          experiencing homelessness, while empowering volunteers
-                          to make a real and immediate impact!! Always ready to
-                          Take The Opportunity!
-                          <br />
-                          <br />
-                          ANXIOUSLOOMERS is proud to have participated in Take
-                          The Opportunity's second annual backpack drive
-                          2024-2025, over 200 backpacks filled with hygienic
-                          resources and other essentials were donated to those
-                          experiencing homelessness.
-                        </p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                    </SwiperSlide>
                   </Swiper>
                   <button
                     type="button"
