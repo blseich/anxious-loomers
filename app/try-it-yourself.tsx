@@ -3,7 +3,7 @@ import Section from "@/components/section";
 export default function TryItYourself() {
   return (
     <>
-      <div className="bg-brand-light pt-10 pb-12 lg:py-16 lg:pb-24">
+      <div className="bg-brand-light py-12 lg:py-16 lg:pb-24">
         <div className="section-container">
           <h2 className="text-4xl lg:text-6xl font-test font-bold text-brand-dark">
             LEARN TO LOOM

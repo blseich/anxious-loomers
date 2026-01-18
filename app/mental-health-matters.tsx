@@ -23,20 +23,20 @@ export default function MentalHealthMatters() {
 
   return (
     <>
-      <div className="bg-brand-dark text-white p-6 lg:p-8">
+      <div className="text-brand-dark p-6 lg:p-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="font-test font-bold text-4xl lg:text-5xl">
             Why Mental Health
             <div className="text-5xl lg:text-6xl font-black">MATTERS</div>
           </h2>
-          <p className="mt-2 text-white/80 max-w-prose">
+          <p className="mt-2 text-brand-dark/80 max-w-prose">
             The numbers tell a story. These statistics are why support and
             awareness are critical to improving the wellness of our communities.
           </p>
         </div>
       </div>
       <div className="section-container lg:flex lg:flex-col">
-        <div className="mt-10 grid gap-6 lg:gap-8 lg:grid-cols-3 lg:max-w-285 lg:mx-auto">
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-3 lg:max-w-285 lg:mx-auto">
           <div
             ref={statOneRef}
             className={`stat-card bg-brand-dark text-white p-6 lg:p-8 rounded-2xl text-base lg:text-lg text-center border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.25)] overflow-hidden ${

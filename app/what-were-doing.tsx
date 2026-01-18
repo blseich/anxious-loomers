@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Section from "@/components/section";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import type { Swiper as SwiperInstance } from "swiper";
@@ -15,6 +14,8 @@ export default function WhatWereDoing() {
   const swiperRef = useRef<SwiperInstance | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const totalSlides = 3;
 
   return (
     <>
@@ -32,38 +33,56 @@ export default function WhatWereDoing() {
         <div className="section-container pb-8 lg:pb-12">
           <div className="-mt-6 lg:-mt-10 rounded-3xl bg-brand-dark/90 p-4 lg:p-6">
             <div className="mx-auto max-w-4xl">
-              <div className="flex items-center gap-4 lg:gap-6">
-                <button
-                  type="button"
-                  onClick={() => swiperRef.current?.slidePrev()}
-                  className={`hidden lg:inline-flex items-center justify-center h-14 w-14 rounded-full border text-3xl ${
-                    isBeginning
-                      ? "border-gray-300 text-gray-300"
-                      : "border-accent-warm text-accent-warm"
-                  }`}
-                  aria-label="Previous slide"
-                  aria-disabled={isBeginning}
-                  disabled={isBeginning}
-                >
-                  <FontAwesomeIcon icon={faAngleLeft} />
-                </button>
-                <Swiper
-                  modules={[Pagination]}
-                  pagination={{ clickable: true }}
-                  spaceBetween={24}
-                  slidesPerView={1}
-                  className="what-were-doing-carousel flex-1"
-                  breakpoints={{ 1024: { spaceBetween: 32 } }}
-                  onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                    setIsBeginning(swiper.isBeginning);
-                    setIsEnd(swiper.isEnd);
-                  }}
-                  onSlideChange={(swiper) => {
-                    setIsBeginning(swiper.isBeginning);
-                    setIsEnd(swiper.isEnd);
-                  }}
-                >
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-center gap-2">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={`slide-${index}`}
+                      type="button"
+                      onClick={() => swiperRef.current?.slideTo(index)}
+                      className={`h-2.5 w-8 rounded-full transition-colors cursor-pointer ${
+                        index === activeIndex
+                          ? "bg-accent-warm"
+                          : "bg-gray-400"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                      aria-current={index === activeIndex}
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center gap-4 lg:gap-6">
+                  <button
+                    type="button"
+                    onClick={() => swiperRef.current?.slidePrev()}
+                    className={`hidden lg:inline-flex items-center justify-center h-14 w-14 rounded-full border text-3xl cursor-pointer ${
+                      isBeginning
+                        ? "border-gray-300 text-gray-300"
+                        : "border-accent-warm text-accent-warm"
+                    }`}
+                    aria-label="Previous slide"
+                    aria-disabled={isBeginning}
+                    disabled={isBeginning}
+                  >
+                    <FontAwesomeIcon icon={faAngleLeft} />
+                  </button>
+                  <Swiper
+                    modules={[Pagination]}
+                    spaceBetween={24}
+                    slidesPerView={1}
+                    className="what-were-doing-carousel flex-1"
+                    breakpoints={{ 1024: { spaceBetween: 32 } }}
+                    onSwiper={(swiper) => {
+                      swiperRef.current = swiper;
+                      setIsBeginning(swiper.isBeginning);
+                      setIsEnd(swiper.isEnd);
+                      setActiveIndex(swiper.activeIndex);
+                    }}
+                    onSlideChange={(swiper) => {
+                      setIsBeginning(swiper.isBeginning);
+                      setIsEnd(swiper.isEnd);
+                      setActiveIndex(swiper.activeIndex);
+                    }}
+                  >
                   <SwiperSlide className="h-full">
                     <div className="bg-white border border-accent-warm-light shadow-xl rounded-2xl overflow-hidden h-full flex flex-col">
                       <div className="p-4 lg:p-6 border-b border-brand-light flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
@@ -202,21 +221,22 @@ export default function WhatWereDoing() {
                       </div>
                     </div>
                   </SwiperSlide>
-                </Swiper>
-                <button
-                  type="button"
-                  onClick={() => swiperRef.current?.slideNext()}
-                  className={`hidden lg:inline-flex items-center justify-center h-14 w-14 rounded-full border text-3xl ${
-                    isEnd
-                      ? "border-gray-300 text-gray-300"
-                      : "border-accent-warm text-accent-warm"
-                  }`}
-                  aria-label="Next slide"
-                  aria-disabled={isEnd}
-                  disabled={isEnd}
-                >
-                  <FontAwesomeIcon icon={faAngleRight} />
-                </button>
+                  </Swiper>
+                  <button
+                    type="button"
+                    onClick={() => swiperRef.current?.slideNext()}
+                    className={`hidden lg:inline-flex items-center justify-center h-14 w-14 rounded-full border text-3xl cursor-pointer ${
+                      isEnd
+                        ? "border-gray-300 text-gray-300"
+                        : "border-accent-warm text-accent-warm"
+                    }`}
+                    aria-label="Next slide"
+                    aria-disabled={isEnd}
+                    disabled={isEnd}
+                  >
+                    <FontAwesomeIcon icon={faAngleRight} />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
